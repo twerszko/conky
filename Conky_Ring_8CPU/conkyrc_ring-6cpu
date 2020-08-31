@@ -31,7 +31,7 @@ conky.config = {
 	draw_borders = false,
 	stippled_borders = 2,
 
-	default_color = 'white',
+	default_color = 'black',
      -- own_window_colour = 'white',
 
 	alignment = 'top_right',
