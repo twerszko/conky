@@ -5,8 +5,8 @@ update_interval 1
 total_run_times 0
 
 #gap_x -750
-gap_x -600
-gap_y 20
+gap_x -300
+gap_y -500
 
 own_window yes
 own_window_type normal

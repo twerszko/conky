@@ -1,6 +1,7 @@
 --==============================================================================
 
 require 'cairo'
+require('cairo_xlib')
 
 -------------------------------------------------------------------------------
 --                                                                    gauge DATA
@@ -69,7 +70,7 @@ gauge = {
     graduation_fg_colour=0xffffff, graduation_fg_alpha=0.3,
     caption='CPU2',
     caption_weight=1,              caption_size=10.0,
-    caption_fg_colour=0xffffff,    caption_fg_alpha=0.5,
+    caption_fg_colour=0x000000,    caption_fg_alpha=0.5,
 },
 {
     name='cpu',                    arg='cpu4',                  max_value=cpu_max,
@@ -78,7 +79,7 @@ gauge = {
     graph_thickness=4,
     graph_start_angle=220,
     graph_unit_angle=2.7,          graph_unit_thickness=2.7,
-    graph_bg_colour=0x000000,      graph_bg_alpha=graph_bg_alpha,
+    graph_bg_colour=0xffffff,      graph_bg_alpha=graph_bg_alpha,
     graph_fg_colour=0xFFFF00,      graph_fg_alpha=graph_fg_alpha,
     hand_fg_colour=0xFFFF00,       hand_fg_alpha=0.8,
     txt_radius=10,
@@ -174,12 +175,12 @@ gauge = {
     graduation_fg_colour=0x000000, graduation_fg_alpha=0.3,
     caption='CPU7',
     caption_weight=1,              caption_size=10.0,
-    caption_fg_colour=0xffffff,    caption_fg_alpha=0.5,
+    caption_fg_colour=0x000000,    caption_fg_alpha=0.5,
 },
 {
     name='fs_used_perc',           arg=' /',                     max_value=cpu_max,
-    x=90,                          y=260,
-    graph_radius=80,
+    x=110,                         y=280,
+    graph_radius=100,
     graph_thickness=7,
     graph_start_angle=180,
     graph_unit_angle=2.7,          graph_unit_thickness=2.7,
@@ -187,6 +188,27 @@ gauge = {
     graph_fg_colour=0x8B008B,      graph_fg_alpha=graph_fg_alpha,
     hand_fg_colour=0x8B008B,       hand_fg_alpha=0.7,
     txt_radius=42,
+    txt_weight=0,                  txt_size=0.0,
+    txt_fg_colour=0x000000,        txt_fg_alpha=0.3,
+    graduation_radius=90,
+    graduation_thickness=8,        graduation_mark_thickness=2,
+    graduation_unit_angle=27,
+    graduation_fg_colour=0x000000, graduation_fg_alpha=0.5,
+    caption='',
+    caption_weight=1,              caption_size=10.0,
+    caption_fg_colour=0x000000,    caption_fg_alpha=0.5,
+},
+{
+    name='fs_used_perc',           arg=' /home',                max_value=100,
+    x=110,                         y=280,
+    graph_radius=80,
+    graph_thickness=7,
+    graph_start_angle=180,
+    graph_unit_angle=2.7,          graph_unit_thickness=2.7,
+    graph_bg_colour=0x000000,      graph_bg_alpha=graph_bg_alpha,
+    graph_fg_colour=0x4B0082,      graph_fg_alpha=graph_fg_alpha,
+    hand_fg_colour=0x4B0082,       hand_fg_alpha=0.7,
+    txt_radius=10,
     txt_weight=0,                  txt_size=0.0,
     txt_fg_colour=0x000000,        txt_fg_alpha=0.3,
     graduation_radius=70,
@@ -198,8 +220,8 @@ gauge = {
     caption_fg_colour=0x000000,    caption_fg_alpha=0.5,
 },
 {
-    name='fs_used_perc',           arg=' /home',                max_value=100,
-    x=90,                          y=260,
+    name='fs_used_perc',           arg=' /home/xenomorph/storage',              max_value=100,
+    x=110,                         y=280,
     graph_radius=60,
     graph_thickness=7,
     graph_start_angle=180,
@@ -220,7 +242,7 @@ gauge = {
 },
 {
     name='memperc',                arg='',                      max_value=100,
-    x=145,                          y=440,
+    x=165,                         y=480,
     graph_radius=60,
     graph_thickness=10,
     graph_start_angle=320,
@@ -396,4 +418,3 @@ function conky_main()
     cairo_surface_destroy(cs)
     cairo_destroy(display)
 end
-
